@@ -1,0 +1,90 @@
+{
+  "real_probe": {
+    "layer_0": {
+      "train_acc": 1.0,
+      "test_acc": 0.9
+    },
+    "layer_1": {
+      "train_acc": 1.0,
+      "test_acc": 1.0
+    },
+    "layer_2": {
+      "train_acc": 1.0,
+      "test_acc": 0.8
+    },
+    "layer_3": {
+      "train_acc": 1.0,
+      "test_acc": 0.9
+    },
+    "layer_4": {
+      "train_acc": 1.0,
+      "test_acc": 0.9
+    },
+    "layer_5": {
+      "train_acc": 1.0,
+      "test_acc": 0.8
+    },
+    "layer_6": {
+      "train_acc": 1.0,
+      "test_acc": 0.9
+    },
+    "layer_7": {
+      "train_acc": 1.0,
+      "test_acc": 0.8
+    },
+    "layer_8": {
+      "train_acc": 1.0,
+      "test_acc": 0.9
+    },
+    "layer_9": {
+      "train_acc": 1.0,
+      "test_acc": 0.7
+    },
+    "layer_10": {
+      "train_acc": 1.0,
+      "test_acc": 0.6
+    },
+    "layer_11": {
+      "train_acc": 1.0,
+      "test_acc": 0.7
+    }
+  },
+  "control_shuffled": {
+    "layer_0": {
+      "test_acc": 0.3
+    },
+    "layer_1": {
+      "test_acc": 0.6
+    },
+    "layer_2": {
+      "test_acc": 0.6
+    },
+    "layer_3": {
+      "test_acc": 0.6
+    },
+    "layer_4": {
+      "test_acc": 0.5
+    },
+    "layer_5": {
+      "test_acc": 0.5
+    },
+    "layer_6": {
+      "test_acc": 0.6
+    },
+    "layer_7": {
+      "test_acc": 0.7
+    },
+    "layer_8": {
+      "test_acc": 0.5
+    },
+    "layer_9": {
+      "test_acc": 0.4
+    },
+    "layer_10": {
+      "test_acc": 0.6
+    },
+    "layer_11": {
+      "test_acc": 0.6
+    }
+  }
+}
