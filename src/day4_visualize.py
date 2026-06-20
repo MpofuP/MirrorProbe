@@ -28,8 +28,8 @@ ax.axhline(y=0.5, color="red", linestyle="--", linewidth=1, label="Chance level 
 
 ax.set_xlabel("Layer")
 ax.set_ylabel("Test accuracy")
-ax.set_title("Day 4: Real probe vs. shuffled-label control, per layer\n"
-             "(n=20, small sample - overlap shows result is not yet conclusive)")
+ax.set_title("Day 5: Real probe vs. shuffled-label control, per layer\n"
+             "(n=100, 50 pairs - clear gap emerging, confound checks still needed)")
 ax.set_xticks(x)
 ax.set_xticklabels(layers)
 ax.set_ylim(0, 1.05)
