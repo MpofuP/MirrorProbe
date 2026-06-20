@@ -2,89 +2,89 @@
   "real_probe": {
     "layer_0": {
       "train_acc": 1.0,
-      "test_acc": 0.9
+      "test_acc": 0.8
     },
     "layer_1": {
       "train_acc": 1.0,
-      "test_acc": 1.0
+      "test_acc": 0.86
     },
     "layer_2": {
       "train_acc": 1.0,
-      "test_acc": 0.8
+      "test_acc": 0.88
     },
     "layer_3": {
       "train_acc": 1.0,
-      "test_acc": 0.9
+      "test_acc": 0.86
     },
     "layer_4": {
       "train_acc": 1.0,
-      "test_acc": 0.9
+      "test_acc": 0.86
     },
     "layer_5": {
       "train_acc": 1.0,
-      "test_acc": 0.8
+      "test_acc": 0.86
     },
     "layer_6": {
       "train_acc": 1.0,
-      "test_acc": 0.9
+      "test_acc": 0.94
     },
     "layer_7": {
       "train_acc": 1.0,
-      "test_acc": 0.8
+      "test_acc": 0.94
     },
     "layer_8": {
       "train_acc": 1.0,
-      "test_acc": 0.9
+      "test_acc": 0.94
     },
     "layer_9": {
       "train_acc": 1.0,
-      "test_acc": 0.7
+      "test_acc": 0.94
     },
     "layer_10": {
       "train_acc": 1.0,
-      "test_acc": 0.6
+      "test_acc": 0.94
     },
     "layer_11": {
       "train_acc": 1.0,
-      "test_acc": 0.7
+      "test_acc": 0.9
     }
   },
   "control_shuffled": {
     "layer_0": {
-      "test_acc": 0.3
+      "test_acc": 0.54
     },
     "layer_1": {
-      "test_acc": 0.6
+      "test_acc": 0.64
     },
     "layer_2": {
-      "test_acc": 0.6
+      "test_acc": 0.54
     },
     "layer_3": {
-      "test_acc": 0.6
+      "test_acc": 0.52
     },
     "layer_4": {
-      "test_acc": 0.5
+      "test_acc": 0.48
     },
     "layer_5": {
-      "test_acc": 0.5
+      "test_acc": 0.56
     },
     "layer_6": {
-      "test_acc": 0.6
+      "test_acc": 0.58
     },
     "layer_7": {
-      "test_acc": 0.7
+      "test_acc": 0.48
     },
     "layer_8": {
-      "test_acc": 0.5
+      "test_acc": 0.52
     },
     "layer_9": {
-      "test_acc": 0.4
+      "test_acc": 0.46
     },
     "layer_10": {
-      "test_acc": 0.6
+      "test_acc": 0.5
     },
     "layer_11": {
-      "test_acc": 0.6
+      "test_acc": 0.46
     }
   }
 }
