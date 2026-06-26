@@ -7,44 +7,57 @@ separate from output text.
 This is an in-progress, honestly-reported experiment - not a finished
 product. Daily build log in /logs.
 
-## Status (Day 6)
+## Status (Day 9)
 
-A linear probe trained on GPT-2 Small's residual stream activations
-distinguishes social-pressure framing from neutral framing with
-80-97% accuracy across layers, well above a random-label control
-(~50%). The result has now passed four independent checks:
+A linear probe trained on residual stream activations distinguishes
+social-pressure framing from neutral framing with high accuracy across
+three different models. The result has now passed five independent checks.
 
-- **Control 1 (lexical confound):** Decoys mentioning an authority
-  figure WITHOUT pressure are classified near chance (48-54%) at
-  layers 7-11, though earlier layers (0-3) show more lexical
-  sensitivity (56-84%).
-- **Control 2 (output-identical pairs):** Even on the subset of pairs
-  where the model's generated text was nearly identical between
-  conditions, the probe still distinguished internals at 87-97%
-  accuracy. Caveat: GPT-2 Small is a base model and produced largely
-  degenerate "I'm not sure" filler as its "identical" output, which
-  weakens how strong this specific test is - a cleaner version on an
-  instruction-tuned model is planned.
-- **Control 3 (cross-topic generalization):** Leave-one-topic-cluster-out
-  testing shows 83-96% accuracy on topics never seen during training -
-  the probe is not just memorizing topic-specific vocabulary.
-- **Control 4 (second model):** The same pattern replicates on
-  Pythia-160M (a different architecture and training run), with real
-  accuracy 70-97% vs. shuffled control 40-50% at nearly every layer.
-  One anomaly (layer 1 control scored 0.80) is flagged for follow-up
-  with multiple random seeds before being dismissed as noise.
+### Primary result (GPT-2 Small, 10 seeds)
+- Real probe: 0.92 +/- 0.03 at layers 8-10
+- Shuffled control: 0.49 +/- 0.07
+- Statistically stable across 10 random seeds
 
-## What this does NOT yet claim
+### Controls passed
+- **Control 1 (lexical confound):** Decoys mentioning authority
+  without endorsement classified near chance (46-54%) at layers 7-11.
+  Early layers (0-4) show more lexical sensitivity (56-84%).
+- **Control 2 (output-identical, GPT-2):** 0.87-0.97 accuracy on
+  most output-similar pairs. Caveat: GPT-2 produced degenerate filler
+  text as "identical" output - weaker version of this test.
+- **Control 2 REDO (output-identical, TinyLlama):** 0.70-0.93 accuracy
+  on most output-similar pairs from an instruction-tuned model that
+  gives real stances. This is the strongest version of the core
+  hypothesis - internal state differs even when the model reaches the
+  same conclusion in both conditions.
+- **Control 3 (cross-topic generalization):** 0.83-0.96 accuracy on
+  topic clusters never seen during training.
+- **Control 4 (cross-architecture):** Pattern replicates on
+  Pythia-160M (0.70-0.97 real vs 0.40-0.50 control).
+- **Control 5 (random label shuffle):** Control consistently near
+  chance across all models and seeds.
 
-This is not evidence of "genuine vs performed alignment" or any
-general claim about model welfare. It is a narrower, falsifiable
-finding: linear probes on residual stream activations can detect
-social-pressure framing with high accuracy, robust to several
-confound checks, on two small open models. Multiple random seeds,
-a larger model, and an instruction-tuned model for a cleaner Control 2
-are the next steps before this is written up formally.
+### Notable finding (Day 8)
+In one pair (boiling seawater), social pressure accidentally corrected
+a factual error - the neutral condition produced a wrong answer,
+the pressured condition produced the correct one. Unplanned finding,
+reported honestly.
+
+## What this does NOT claim
+- Nothing about large instruction-tuned deployed models
+- Nothing about genuine vs performed alignment
+- TinyLlama Control 2 still needs multi-seed rerun
+- All prompts written by single author - style leak risk not yet checked
 
 ## Project structure
-- `src/` - all experiment code, by day
-- `data/` - prompt pairs, extracted activations, results
-- `logs/` - full build log (not pushed, local only)
+- src/ - all experiment code, day by day
+- data/ - prompt pairs, activations, results, charts
+- logs/ - full build log (local only, not pushed)
+
+## Models tested
+- GPT-2 Small (124M, base) via TransformerLens
+- Pythia-160M (160M, base) via TransformerLens
+- TinyLlama-1.1B-Chat (1.1B, instruction-tuned) via raw PyTorch hooks
+
+## Code and data
+github.com/MpofuP/MirrorProbe
